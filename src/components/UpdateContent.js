@@ -6,6 +6,7 @@ class UpdateContent extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: this.props.data.id,
             title: this.props.data.title,
             desc: this.props.data.desc
         }

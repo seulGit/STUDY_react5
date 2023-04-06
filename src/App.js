@@ -73,6 +73,7 @@ class App extends Component {
           }.bind(this)}></CreateContent>
         } else if(this.state.mode === 'update') {
           _content = this.getReadContent();
+          console.log("*****"+_content.id)
           _article = <UpdateContent data={_content} onSubmit={function(_id, _title, _desc) {
             //push()를 사용한 원본배열변경은 권장하지않음
             //this.state.contents.push(
@@ -83,6 +84,7 @@ class App extends Component {
             // 업데이트할 컨텐츠의 id값을 이용해서 해당id를 가진 컨텐츠를 배열에서 업데이트
             var _contents = Array.from(this.state.contents)
             var i = 0;
+            console.log("*************" + _content.id)
             while(i < _contents.length) {
               if(_contents[i].id === _id) {
                 _contents[i] = {id: _id, title: _title, desc: _desc};
