@@ -17,7 +17,7 @@ class UpdateContent extends Component {
         this.setState({[e.target.name]: e.target.value});
     }
     render() {
-        console.log(this.props.date);
+        console.log(this.props.data);
         console.log('UpdateContent render')
         return (
             <article>
@@ -35,15 +35,11 @@ class UpdateContent extends Component {
                     <input type="hidden" name="id" value={this.state.id}></input>
                     <p>
                         <input type="text" name="title" placeholder="title" value={this.state.title}
-                                onChange={function(e) {
-                                    this.setState({title: e.target.value});
-                                }.bind(this)}></input>
+                                onChange={this.inputFormHandler}></input>
                     </p>
                     <p>
                         <textarea name="desc" placeholder="description" value={this.state.desc}
-                                    onChange={function(e) {
-                                        this.setState({desc: e.target.value});
-                                    }.bind(this)}></textarea>
+                                    onChange={this.inputFormHandler}></textarea>
                     </p>
                     <p>
                         <input type="submit"></input>
